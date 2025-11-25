@@ -47,15 +47,10 @@ public class BFS104 {
         // 3. 调用方法
         System.out.println(">>> 开始层序遍历测试...");
 
-        // 注意：你的 levelOrder 方法里同时调用了 递归 和 迭代 两种方式
-        // 且都在往同一个 resList 里添加数据，所以结果会由两份重复的数据组成
         List<List<Integer>> result = bfs.levelOrder(root);
 
         // 4. 打印最终结果
         System.out.println(">>> 最终返回结果: " + result);
-
-        // 期望输出 (因为你跑了两次):
-        // [[3], [9, 20], [15, 7], [3], [9, 20], [15, 7]]
     }
     public void checkFun01(TreeNode node, Integer deep) {
         if (node == null) {
