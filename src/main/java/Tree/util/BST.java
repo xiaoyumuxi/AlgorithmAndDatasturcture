@@ -32,4 +32,60 @@ public class BST {
         }
         return check(node.left, min, node.val) && check(node.right, node.val, max);
     }
+
+    public static boolean AddNode(int val, TreeNode root) {
+        //添加一个节点到BST中，而且需要其保持二叉搜索树的特征
+        TreeNode newNode = new TreeNode(val);
+        if (root == null) {
+            root = newNode;//这里值传递没有返回root，因此修改是无用的
+            return true;
+        }
+        if (!isBfs(root)) {
+            return false;
+        }//首先原来需要是一个二叉搜索树
+        TreeNode p = root;
+        while(p!=null){
+            if (p.val < val) {
+                p=p.right;
+            }else  {
+                p=p.left;
+            }
+        }
+        //p = newNode;这个时候p为null，直接等于newNode没有用，需要找到p的parent然后放到对应位置上
+        return true;
+    }
+
+    public static TreeNode addNode(int val, TreeNode root) {
+        TreeNode newNode = new TreeNode(val);
+
+        // 1. 处理空树情况
+        if (root == null) {
+            return newNode; // 直接返回新节点作为根
+        }
+
+        TreeNode current = root;
+        TreeNode parent = null;
+
+        // 2. 寻找插入位置
+        while (current != null) {
+            parent = current; // 记录父节点
+            if (val < current.val) {
+                current = current.left; // 小的往左走
+            } else if (val > current.val) {
+                current = current.right; // 大的往右走
+            } else {
+                // val == current.val，值已存在
+                return root; // 不插入重复值，直接返回
+            }
+        }
+
+        // 3. 执行挂载（连接父节点和新节点）
+        if (val < parent.val) {
+            parent.left = newNode;
+        } else {
+            parent.right = newNode;
+        }
+
+        return root;
+    }
 }
