@@ -44,11 +44,11 @@ public class BST {
             return false;
         }//首先原来需要是一个二叉搜索树
         TreeNode p = root;
-        while(p!=null){
+        while (p != null) {
             if (p.val < val) {
-                p=p.right;
-            }else  {
-                p=p.left;
+                p = p.right;
+            } else {
+                p = p.left;
             }
         }
         //p = newNode;这个时候p为null，直接等于newNode没有用，需要找到p的parent然后放到对应位置上
@@ -87,5 +87,82 @@ public class BST {
         }
 
         return root;
+    }
+
+    public static TreeNode removeNode(int val, TreeNode root) {
+        //在root里面删除val节点
+        if (root == null) {
+            return root;
+        }
+        if (root.val == val) {
+            //1.左右都为null
+            if (root.left == null && root.right == null) {
+                return null;
+            } else if (root.left == null && root.right != null) {
+                //左边为null右边非空，那么就是删除当前节点返回right
+                return root.right;
+            } else if (root.left != null && root.right == null) {
+                return root.left;
+            } else {
+                //两边都非空，那么就需要找到左子树的最大节点和右子树的最小节点，然后将左子树接到右子树最小节点的left上去
+                TreeNode temp = root.right;
+                TreeNode parent = null;
+                while (temp != null) {
+                    parent = temp;
+                    temp = temp.left;
+                }
+                parent.left = root.left;
+                return root.right;
+            }
+        } else {
+            //root.left = removeNode(val, root.left);
+            //root.right = removeNode(val, root.right);
+            //这里没有利用好BST的性质
+            if (val < root.val) {
+                root.left = removeNode(val, root.left);
+            } else {
+                root.right = removeNode(val, root.right);
+            }
+            return root;
+        }
+    }
+
+    public static TreeNode removeNodeBySwap(int val, TreeNode root) {
+        //在root里面删除val节点
+        if (root == null) {
+            return root;
+        }
+        if (root.val == val) {
+            //1.左右都为null
+            if (root.left == null && root.right == null) {
+                return null;
+            } else if (root.left == null && root.right != null) {
+                //左边为null右边非空，那么就是删除当前节点返回right
+                return root.right;
+            } else if (root.left != null && root.right == null) {
+                return root.left;
+            } else {
+                //两边都非空，那么就需要找到左子树的最大节点和右子树的最小节点，然后将左子树接到右子树最小节点的left上去
+                TreeNode temp = root.right;
+                TreeNode parent = null;
+                while (temp != null) {
+                    parent = temp;
+                    temp = temp.left;
+                }
+                parent.left = root.left;
+                return root.right;
+            }
+        } else {// 标准通用解法片段
+            // 找到右子树最小节点
+            TreeNode minNode = root.right;
+            while (minNode.left != null) minNode = minNode.left;
+
+            // 偷梁换柱：只改值，不改结构
+            root.val = minNode.val;
+
+            // 去右边把那个替身删掉
+            root.right = removeNode(minNode.val, root.right);
+            return root;
+        }
     }
 }
