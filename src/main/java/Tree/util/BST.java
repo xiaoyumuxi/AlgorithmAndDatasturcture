@@ -33,6 +33,7 @@ public class BST {
         return check(node.left, min, node.val) && check(node.right, node.val, max);
     }
 
+    //这个类的实现是错误的
     public static boolean AddNode(int val, TreeNode root) {
         //添加一个节点到BST中，而且需要其保持二叉搜索树的特征
         TreeNode newNode = new TreeNode(val);
@@ -98,10 +99,10 @@ public class BST {
             //1.左右都为null
             if (root.left == null && root.right == null) {
                 return null;
-            } else if (root.left == null && root.right != null) {
+            } else if (root.left == null) {
                 //左边为null右边非空，那么就是删除当前节点返回right
                 return root.right;
-            } else if (root.left != null && root.right == null) {
+            } else if (root.right == null) {
                 return root.left;
             } else {
                 //两边都非空，那么就需要找到左子树的最大节点和右子树的最小节点，然后将左子树接到右子树最小节点的left上去
@@ -126,7 +127,7 @@ public class BST {
             return root;
         }
     }
-
+    //这个方法的实现是更通用化的
     public static TreeNode removeNodeBySwap(int val, TreeNode root) {
         //在root里面删除val节点
         if (root == null) {
@@ -136,10 +137,10 @@ public class BST {
             //1.左右都为null
             if (root.left == null && root.right == null) {
                 return null;
-            } else if (root.left == null && root.right != null) {
+            } else if (root.left == null) {
                 //左边为null右边非空，那么就是删除当前节点返回right
                 return root.right;
-            } else if (root.left != null && root.right == null) {
+            } else if (root.right == null) {
                 return root.left;
             } else {
                 //两边都非空，那么就需要找到左子树的最大节点和右子树的最小节点，然后将左子树接到右子树最小节点的left上去
