@@ -2,7 +2,7 @@ package Tree;
 
 import java.util.List;
 
-import static Tree.util.Traversal.preorderTraversal;
+import static Utils.Tree.Traversal.preorderTraversal;
 
 public class BST700 {
     public static void main(String[] args) {
