@@ -13,7 +13,6 @@ public class G99_1 {//使用深度搜索来解决这类问题
                 grid[i][j] = in.nextInt();
             }
         }//获取输入
-        System.out.println();
 
         boolean[][]visited =new boolean[n][m];//这里一定要和grid保持一致！！！
         int ans = 0;
