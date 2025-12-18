@@ -1,22 +1,22 @@
 package Utils.UnionFind;
 
-public class UnionFindUtil {
+public class DisJoin {
     static int n = 1005;
     int[] father;
 
-    public UnionFindUtil(){
+    public DisJoin(){
         father = new int[n];
         init();
     }
 
-    public UnionFindUtil(int n) {
+    public DisJoin(int n) {
         father = new int[n];
         init();
     }
 
     // 并查集初始化
     public void init() {
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < father.length; ++i) {
             father[i] = i;
         }
     }
