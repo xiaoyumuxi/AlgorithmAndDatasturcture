@@ -1,6 +1,5 @@
-package Graph.UnionFind;
+package Graph.MinGenTree;
 
-import Utils.Tree.MinGenTree.kruskal;
 import Utils.UnionFind.DisJoin;
 
 import java.util.ArrayList;
