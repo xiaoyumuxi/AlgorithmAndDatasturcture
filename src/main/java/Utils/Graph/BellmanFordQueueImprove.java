@@ -1,5 +1,3 @@
-package Utils.Graph;
-
 import java.util.*;
 
 public class BellmanFordQueueImprove {
@@ -35,12 +33,15 @@ public class BellmanFordQueueImprove {
 
         // 2. 优化：记录点是否已经在队列中
         boolean[] isInQueue = new boolean[V + 1];
+        // 3. 可选：记录入队次数用于检测负环
+        int[] count = new int[V + 1];
 
         // JDK 17: 使用 ArrayDeque 性能通常优于 LinkedList
         Queue<Integer> queue = new ArrayDeque<>();
 
         queue.offer(start);
         isInQueue[start] = true;
+        count[start] = 1;
 
         while (!queue.isEmpty()) {
             int u = queue.poll();
@@ -54,6 +55,13 @@ public class BellmanFordQueueImprove {
                     if (!isInQueue[edge.to]) {
                         queue.offer(edge.to);
                         isInQueue[edge.to] = true;
+                        count[edge.to]++;
+
+                        // 检测负环
+                        if (count[edge.to] >= V) {//如果对一个边松弛的次数超过了V次还在进行就表示有负环
+                            System.out.println("图中存在负权回路！");
+                            return;
+                        }
                     }
                 }
             }
