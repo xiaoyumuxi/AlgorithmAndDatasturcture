@@ -11,14 +11,16 @@ public class DP509 {
 
     public static int fib(int n) {
         if (n <= 1) return n;
-        int[] dp = new int[n + 1];
+        int[] dp = new int[2];
         dp[0] = 0;
         dp[1] = 1;
         for (int i = 2; i <= n; i++) {
-            dp[i] = dp[i - 1] + dp[i - 2];
-            System.out.printf("%d ", dp[i]);
+            int sum = dp[0] + dp[1];
+            dp[0] = dp[1];
+            dp[1] = sum;
+            System.out.printf("%d ", dp[1]);
         }
         System.out.println();
-        return dp[n];
+        return dp[1];
     }
 }
