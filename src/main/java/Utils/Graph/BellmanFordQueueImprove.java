@@ -1,3 +1,5 @@
+package Utils.Graph;
+
 import java.util.*;
 
 public class BellmanFordQueueImprove {
