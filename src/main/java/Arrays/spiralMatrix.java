@@ -16,6 +16,7 @@ public class spiralMatrix {
             }
         }
         System.out.println(spiralOrder(matrix));
+        // 编码错误3:ArrayList是自带打印的方法的因此不需要使用toString等
         sc.close();
     }
 
