@@ -1,3 +1,5 @@
+package Others;
+
 public class rain {
 
     public static int trap(int[] height) {

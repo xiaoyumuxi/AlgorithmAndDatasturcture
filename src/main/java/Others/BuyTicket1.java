@@ -1,3 +1,5 @@
+package Others;
+
 public class BuyTicket1 {
 
     public static void main(String[] args) {
