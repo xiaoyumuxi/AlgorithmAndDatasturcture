@@ -6,28 +6,29 @@ import java.util.Scanner;
 
 public class G99_2 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();//行数
-        int m = in.nextInt();//列数
-        int[][] grid = new int[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                grid[i][j] = in.nextInt();
-            }
-        }//获取输入
-        boolean[][] visited = new boolean[n][m]; // 建议用 boolean，清晰
-        int ans = 0; // 记录岛屿数量
+        try (Scanner in = new Scanner(System.in)) {
+            int n = in.nextInt();//行数
+            int m = in.nextInt();//列数
+            int[][] grid = new int[n][m];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    grid[i][j] = in.nextInt();
+                }
+            }//获取输入
+            boolean[][] visited = new boolean[n][m]; // 建议用 boolean，清晰
+            int ans = 0; // 记录岛屿数量
 
-        // 1. 遍历每一个格子，寻找没去过的陆地
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (grid[i][j] == 1 && !visited[i][j]) {
-                    ans++; // 发现新岛屿(对应存在值+没有被访问过)
-                    bfs(visited, i, j, grid); // 启动 BFS，每一次BFS都会将附近上下左右的所有存在的点都设置为已访问
+            // 1. 遍历每一个格子，寻找没去过的陆地
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    if (grid[i][j] == 1 && !visited[i][j]) {
+                        ans++; // 发现新岛屿(对应存在值+没有被访问过)
+                        bfs(visited, i, j, grid); // 启动 BFS，每一次BFS都会将附近上下左右的所有存在的点都设置为已访问
+                    }
                 }
             }
+            System.out.println(ans);
         }
-        System.out.println(ans);
     }
 
     public static int[][] dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};//下右上左逆时针遍历

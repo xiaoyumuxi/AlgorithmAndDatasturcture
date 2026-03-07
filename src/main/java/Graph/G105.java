@@ -33,26 +33,27 @@ public class G105 {
         }
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int vertices_num = sc.nextInt();
-        int line_num = sc.nextInt();
-        for (int i = 0; i < vertices_num; i++) {
-            adjList.add(new LinkedList<>());
-        }//Initialization
-        for (int i = 0; i < line_num; i++) {
-            int s = sc.nextInt();
-            int t = sc.nextInt();
-            adjList.get(s - 1).add(t - 1);
-        }//构造邻接表
-        boolean[] visited = new boolean[vertices_num];
-        dfs(visited, 0);
-        //bfs(visited,0);
-        for (int i = 0; i < vertices_num; i++) {
-            if (!visited[i]) {
-                System.out.println(-1);
-                return;
+        try (Scanner sc = new Scanner(System.in)) {
+            int vertices_num = sc.nextInt();
+            int line_num = sc.nextInt();
+            for (int i = 0; i < vertices_num; i++) {
+                adjList.add(new LinkedList<>());
+            }//Initialization
+            for (int i = 0; i < line_num; i++) {
+                int s = sc.nextInt();
+                int t = sc.nextInt();
+                adjList.get(s - 1).add(t - 1);
+            }//构造邻接表
+            boolean[] visited = new boolean[vertices_num];
+            dfs(visited, 0);
+            //bfs(visited,0);
+            for (int i = 0; i < vertices_num; i++) {
+                if (!visited[i]) {
+                    System.out.println(-1);
+                    return;
+                }
             }
+            System.out.println(1);
         }
-        System.out.println(1);
     }
 }

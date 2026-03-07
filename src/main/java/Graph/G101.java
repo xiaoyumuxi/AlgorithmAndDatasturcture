@@ -31,37 +31,38 @@ public class G101 {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int m = scanner.nextInt();
-        int[][] grid = new int[n][m];
+        try (Scanner scanner = new Scanner(System.in)) {
+            int n = scanner.nextInt();
+            int m = scanner.nextInt();
+            int[][] grid = new int[n][m];
 
-        // 读取网格
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                grid[i][j] = scanner.nextInt();
+            // 读取网格
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    grid[i][j] = scanner.nextInt();
+                }
             }
-        }
 
-        // 从左侧边，和右侧边向中间遍历
-        for (int i = 0; i < n; i++) {
-            if (grid[i][0] == 1) bfs(grid, i, 0);
-            if (grid[i][m - 1] == 1) bfs(grid, i, m - 1);
-        }
-
-        // 从上边和下边向中间遍历
-        for (int j = 0; j < m; j++) {
-            if (grid[0][j] == 1) bfs(grid, 0, j);
-            if (grid[n - 1][j] == 1) bfs(grid, n - 1, j);
-        }
-
-        count = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (grid[i][j] == 1) bfs(grid, i, j);
+            // 从左侧边，和右侧边向中间遍历
+            for (int i = 0; i < n; i++) {
+                if (grid[i][0] == 1) bfs(grid, i, 0);
+                if (grid[i][m - 1] == 1) bfs(grid, i, m - 1);
             }
-        }
 
-        System.out.println(count);
+            // 从上边和下边向中间遍历
+            for (int j = 0; j < m; j++) {
+                if (grid[0][j] == 1) bfs(grid, 0, j);
+                if (grid[n - 1][j] == 1) bfs(grid, n - 1, j);
+            }
+
+            count = 0;
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    if (grid[i][j] == 1) bfs(grid, i, j);
+                }
+            }
+
+            System.out.println(count);
+        }
     }
 }

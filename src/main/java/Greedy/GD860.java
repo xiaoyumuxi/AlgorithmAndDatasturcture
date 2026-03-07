@@ -11,7 +11,6 @@ public class GD860 {
     public static boolean lemonadeChange(int[] bills) {
         int five = 0;
         int ten = 0;
-        int twenty = 0;
         for (int i = 0; i < bills.length; i++) {
             if (bills[i] == 5) {
                 five++;
@@ -24,7 +23,6 @@ public class GD860 {
                 five--;
             }
             if (bills[i] == 20) {
-                twenty++;
                 if (five > 0 && ten > 0) {//两种方案，优先使用10的
                     five--;
                     ten--;

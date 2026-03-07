@@ -33,21 +33,21 @@ public class Bellman_ford {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        V = scanner.nextInt();
-        E = scanner.nextInt();
-        // 初始化minDist数组
-        minDist = new int[V + 1];
-        end = V;
-        Arrays.fill(minDist, Integer.MAX_VALUE);
-        minDist[start] = 0;//源点到源点的最短距离为0
-        
-        for(int i = 0; i < E; i++){
-            int src = scanner.nextInt();
-            int dest = scanner.nextInt();
-            int weight = scanner.nextInt();
-            addEdge(src, dest, weight);
-        }
+        try (Scanner scanner = new Scanner(System.in)) {
+            V = scanner.nextInt();
+            E = scanner.nextInt();
+            // 初始化minDist数组
+            minDist = new int[V + 1];
+            end = V;
+            Arrays.fill(minDist, Integer.MAX_VALUE);
+            minDist[start] = 0;//源点到源点的最短距离为0
+            
+            for(int i = 0; i < E; i++){
+                int src = scanner.nextInt();
+                int dest = scanner.nextInt();
+                int weight = scanner.nextInt();
+                addEdge(src, dest, weight);
+            }
         // 对所有的边松弛V-1次
         for(int i = 1; i < V; i++){
             boolean updated = false; // 优化：检测是否发生了更新
@@ -69,6 +69,7 @@ public class Bellman_ford {
             System.out.println("不能到达终点");
         } else {
             System.out.println(minDist[end]);
+        }
         }
     }
 }

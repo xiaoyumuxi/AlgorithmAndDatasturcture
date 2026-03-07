@@ -68,7 +68,6 @@ public class Dijkstra {
         while (!pq.isEmpty()) {
             int[] current = pq.poll();
             int vertex = current[0];
-            int distance = current[1];
             
             // 如果顶点已被访问过，则跳过
             if (visited[vertex]) {

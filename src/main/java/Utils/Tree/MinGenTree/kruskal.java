@@ -54,7 +54,7 @@ public class kruskal {
      * Kruskal算法核心实现
      * @return 最小生成树的总权重
      */
-    public int kruskal() {
+    public int getMSTWeight() {
         // 将边按权重排序
         Collections.sort(edges);
         

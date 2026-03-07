@@ -11,7 +11,7 @@ public class G53 {
     private static List<Edge> edges = new ArrayList<>();
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
         int v = scanner.nextInt();
         int e = scanner.nextInt();
         for (int i = 0; i < e; i++) {
@@ -41,7 +41,7 @@ public class G53 {
             System.out.println("无最小生成树,图不连通");
         }
         System.out.printf("最小长度是%d",totalWeight);
-
+        }
     }
 }
 class Edge implements Comparable<Edge>{

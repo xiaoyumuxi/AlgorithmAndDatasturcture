@@ -22,6 +22,6 @@ public class GD376 {
         }
 
 
-        return 0;
+        return count + 2;
     }
 }

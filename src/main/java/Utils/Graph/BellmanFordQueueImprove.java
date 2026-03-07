@@ -13,7 +13,7 @@ public class BellmanFordQueueImprove {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
         int V = scanner.nextInt();
         int E = scanner.nextInt();
 
@@ -72,6 +72,7 @@ public class BellmanFordQueueImprove {
         // 输出结果
         for (int i = 1; i <= V; i++) {
             System.out.println("到 " + i + " 的最短距离: " + (minDist[i] == Integer.MAX_VALUE ? "不可达" : minDist[i]));
+        }
         }
     }
 }

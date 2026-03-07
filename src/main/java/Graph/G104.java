@@ -8,16 +8,16 @@ import java.util.Set;
 public class G104 {
     public static void main(String[] args) {
         // 接收输入
-        Scanner sc = new Scanner(System.in);
-        int m = sc.nextInt();
-        int n = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int m = sc.nextInt();
+            int n = sc.nextInt();
 
-        int[][] grid = new int[m][n];
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                grid[i][j] = sc.nextInt();
+            int[][] grid = new int[m][n];
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    grid[i][j] = sc.nextInt();
+                }
             }
-        }
 
         mark = 2;//进行初始化，海洋为0,陆地为1
         boolean[][] visited = new boolean[m][n];
@@ -63,7 +63,7 @@ public class G104 {
             }
         }
         System.out.println(maxArea);
-
+        }
     }
 
     static int count;//这个记录岛的面积

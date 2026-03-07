@@ -7,24 +7,25 @@ import java.util.Scanner;
 
 public class G110 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
 
-        // 1. 处理输入
-        int n = sc.nextInt();
-        String beginStr = sc.next();
-        String endStr = sc.next();
+            // 1. 处理输入
+            int n = sc.nextInt();
+            String beginStr = sc.next();
+            String endStr = sc.next();
 
-        // 使用 Set 作为字典，查询速度 O(1)
-        HashSet<String> dict = new HashSet<>();
-        for (int i = 0; i < n; i++) {
-            dict.add(sc.next());
+            // 使用 Set 作为字典，查询速度 O(1)
+            HashSet<String> dict = new HashSet<>();
+            for (int i = 0; i < n; i++) {
+                dict.add(sc.next());
+            }
+
+            // 2. 调用 BFS 方法获取结果
+            int result = bfs(beginStr, endStr, dict);
+
+            // 3. 输出
+            System.out.println(result);
         }
-
-        // 2. 调用 BFS 方法获取结果
-        int result = bfs(beginStr, endStr, dict);
-
-        // 3. 输出
-        System.out.println(result);
     }
 
 

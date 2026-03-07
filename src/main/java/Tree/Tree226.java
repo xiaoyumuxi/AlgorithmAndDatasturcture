@@ -1,45 +1,21 @@
 package Tree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class Tree226 {
     //左右子树进行交换，这个函数是错误的
     public TreeNode ReverseLeftAndRight(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
 
         if (root == null) {
-            if(root.left != null && root.right != null) {
-                //这里反转的情况也有问题，只有一边有就需要反转！！！
-                swap(root.left,root.right);
-            }
-            ReverseLeftAndRight(root.left);
-            ReverseLeftAndRight(root.right);
-            return root;
-        }else return null;
-
-    }
-
-    private void swap(TreeNode left, TreeNode right) {
-        if(left == null || right == null) {
-            return;
+            return null;
         }
-        TreeNode tmp = left;
-        left  = right;
-        right = tmp;
-        //这个函数错了，只是修改了局部变量 left 的指向，因为Java不是引用传递
-    }
-
-    // 如果你想保留 swap 方法，应该这样写
-    private void swapRight(TreeNode root) {
-        if (root == null) return;
         TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
-    }//也就是说，因为是引用传递因此这里我们需要传入的应该是一个而不是两个对象
-    //因为传入root取访问left和right就是引用对象而不是值
+        root.left = ReverseLeftAndRight(root.right);
+        root.right = ReverseLeftAndRight(temp);
+        return root;
+
+    }
 
     // --- Main 函数 ---
     public static void main(String[] args) {
