@@ -26,14 +26,14 @@ public class TwoNumSum {
         Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
+            int need = target - nums[i];
+            if (map.containsKey(need)) {
+                return new int[]{ map.get(need), i };
+            }
             map.put(nums[i], i);
         }
-
-        for (int num : map.keySet()) {
-            if (map.containsKey(target - num)) {
-                return new int[] { map.get(num), map.get(target - num) };
-            }
-        }
+        // 编码问题1:想将所有的数据放入到HashMap里面可能导致->如果 target = 2*num，比如 [3,3] target=6，map 里只有一个 key=3
+        // ，对应最后一次出现的下标，你会返回 [1,1]，这违反题意“不能用同一个元素两次”
         return new int[] {};
     }
 }
