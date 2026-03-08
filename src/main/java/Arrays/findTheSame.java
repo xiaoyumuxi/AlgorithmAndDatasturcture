@@ -26,16 +26,17 @@ public class findTheSame {
 
     public static int find1(int[] nums){
         // 使用双指针--快慢指针的方法来进行遍历,因为题目数据里面有nums[i] <= n
-        int slow = nums[0];
-        int fast = nums[nums[0]];
+        int slow = 0,fast = 0;
 
-        while(fast != slow){
+        do{
             slow = nums[slow];           // 走一步
             fast = nums[nums[fast]];     // 走两步
-        }
+        }while(fast != slow);
+        // 编码错误2:最开始就是从0开始的，但是为了避免fast == slow因此需要使用do……while循环
 
         // 相遇之后重置一个节点
-        slow = nums[0];
+        slow = 0;
+        // 编码错误1:应该是重置到最开始的起点位置去,最开始的位置错了不是nums[0]而是0
 
         while(fast != slow){
             slow = nums[slow];
