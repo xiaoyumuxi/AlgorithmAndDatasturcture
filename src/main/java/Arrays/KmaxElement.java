@@ -1,5 +1,6 @@
 package Arrays;
 
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class KmaxElement {
@@ -11,7 +12,9 @@ public class KmaxElement {
             nums[i] = sc.nextInt();
         }
         int k = sc.nextInt();
-        System.out.println(getTheK(nums,k));
+        // System.out.println(getTheK(nums,k));
+        // 忘记了getTheK函数是会修改nums数组的，因此就导致最后的getTheK1出错了
+        System.out.println(getTheK1(nums, k));
         sc.close();
     }
     
@@ -77,6 +80,18 @@ public class KmaxElement {
         int temp = nums[j];
         nums[j] = nums[i];
         nums[i] = temp;
+    }
+
+    public static int getTheK1(int[] nums,int k){
+        // 使用优先队列现成数据结构来进行构建
+        PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> Integer.compare(b, a));
+        for (int x : nums) heap.offer(x);
+        // 编码错误5:忘记入堆操作了
+        int res = 0;
+        for(int i = 0 ; i < k ; i++){
+            res = heap.poll();
+        }
+        return res;
     }
 
 }
