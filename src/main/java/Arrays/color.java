@@ -29,7 +29,8 @@ public class color {
             }else if(nums[curr] == 2){
                 swap(nums, curr, j);
                 j--;
-                curr++;
+                // 编码错误2:因为curr是从左边开始扫描的，因此左边的是已知的，但是右边是为止的因此必须要重新进行判断一下才可以
+                // 因此这里就curr就不可以++了
             }else{
                 curr++;
                 // 编码错误1:扫到1的情况curr也需要++，这个忘记了就会导致没有反应
