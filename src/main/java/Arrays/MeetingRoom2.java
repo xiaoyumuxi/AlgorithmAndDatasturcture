@@ -13,6 +13,7 @@ public class MeetingRoom2 {
             intervals[i][1] = sc.nextInt();
         }
         System.out.println(minRoomNum(intervals));
+        System.out.println(minRoomNum1(intervals));
         sc.close();
     }
     
@@ -43,4 +44,27 @@ public class MeetingRoom2 {
         return rooms;
     }
 
+    public static int minRoomNum1(int[][] intervals){
+        // 1. 找到最大的结束时间，确定数组大小
+        int maxEnd = 0;
+        for (int[] interval : intervals) {
+            maxEnd = Math.max(maxEnd, interval[1]);
+        }
+
+        // 2. 差分数组：只标记入口和出口
+        int[] diff = new int[maxEnd + 1];
+        for (int[] interval : intervals) {
+            diff[interval[0]]++;   // 会议开始，+1
+            diff[interval[1]]--;   // 会议结束，-1
+        }
+
+        // 3. 前缀和还原，同时取最大值
+        int rooms = 0, curr = 0;
+        for (int i = 0; i <= maxEnd; i++) {
+            curr += diff[i];       // 累加就是当前时刻的会议数
+            rooms = Math.max(rooms, curr);
+        }
+
+        return rooms;
+    }
 }
