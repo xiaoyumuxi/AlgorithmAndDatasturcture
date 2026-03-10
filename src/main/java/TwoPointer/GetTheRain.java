@@ -15,7 +15,7 @@ public class GetTheRain {
         for (int i = 0; i < parts.length; i++) {
             height[i] = Integer.parseInt(parts[i].trim());
         }
-
+        System.out.println(trap(height));
         System.out.println(trap1(height));
     }
 
@@ -39,6 +39,27 @@ public class GetTheRain {
             // 编码错误2:水位的意思是需要减去里面的柱子的高度的height[i]的
         }
         // 思路卡住了，突然忘记求这两个数组的意义是求出每一列最大容积
+        return res;
+    }
+
+    public static int trap(int[] height){
+        // 使用标准的双指针来尝试一下
+        int left = 0,right = height.length - 1;
+        int leftMax = 0,rightMax = 0;
+        int res = 0;
+        while(left < right){
+            if(height[left] < height[right]){
+                leftMax = Math.max(leftMax, height[left]);
+                res += leftMax - height[left];
+                // 编码错误1: 因为这里前面的height[left] < height[right]已经限定好了左侧是短板，因此直接取
+                // letfMax即可不需要去Math.min(leftMax,rightMax)的
+                left ++;
+            }else{
+                rightMax = Math.max(rightMax, height[right]);
+                res += rightMax - height[right];
+                right --;
+            }
+        }
         return res;
     }
 }
