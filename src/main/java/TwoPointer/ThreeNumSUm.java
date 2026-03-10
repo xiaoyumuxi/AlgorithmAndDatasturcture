@@ -20,7 +20,7 @@ public class ThreeNumSUm {
     public static List<List<Integer>>  ThreeNum(int[] nums){
         // 默认隐性规定i < j < k
         List<List<Integer>> res = new ArrayList<>();
-        // 思路错误1:虽然知道是双指针法但是还是不小心写成了暴力三层循环的方式，而且缺乏去重的思路，双指针的核心就是
+        // 思路错误1:虽然知道是双指针法但是还是不小心写成了暴力三层循环的方式，而且缺乏去重的思路，双指针的前提是有序数组
 
         Arrays.sort(nums);
         for(int i = 0; i < nums.length ; i++){
