@@ -20,3 +20,13 @@
 | 75 | [颜色分类](https://leetcode.cn/problems/sort-colors/) | Medium | 荷兰国旗，三路分区 | 🔴 | 写不出来指针的方法 |
 | 253 | [会议室 II](https://leetcode.cn/problems/meeting-rooms-ii/)（VIP） | Medium | 最小堆 / 差分数组 | 🔴 | 还是不会除了暴力解法 |
 | 4 | [寻找两个正序数组的中位数](https://leetcode.cn/problems/median-of-two-sorted-arrays/) | Hard | 二分查找，O(log(m+n)) | 🔴 | 代码实现卡壳太多 |
+
+### Day 4 双指针
+**核心思路**：双指针的前提是有序数组
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 283 | [移动零](https://leetcode.cn/problems/move-zeroes/) | Easy | 快慢指针原地交换 | 🟢 | 还行，但是有一点思路想多了 |
+| 15 | [三数之和](https://leetcode.cn/problems/3sum/) | Medium | 排序 + 双指针 + 去重 | 🔴 | 写成暴力法去了，还是不行 |
+| 11 | [盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/) | Medium | 左右指针，移动较短板 |   • [ ] |  |
+| 42 | [接雨水](https://leetcode.cn/problems/trapping-rain-water/) | Hard | 双指针 / 单调栈 / 预处理 |   • [ ] |  |
+| 5 | [最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/) | Medium | 中心扩展 / Manacher |   • [ ] |  |
