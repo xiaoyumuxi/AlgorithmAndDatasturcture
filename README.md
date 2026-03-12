@@ -46,24 +46,24 @@
 ### Day 6~7 链表
 
 ```
-    public static class Node{// 这里需要static才能直接调用
-        int value;
-        Node next;
+public static class Node{// 这里需要static才能直接调用
+    int value;
+    Node next;
 
-        public Node(){}
+    public Node(){}
 
-        public Node(int val){this.value = val;}
+    public Node(int val){this.value = val;}
 
-        public Node(int val,Node next){
-            this.value = val;
-            this.next = next;
-        }
-    }// 节点类
+    public Node(int val,Node next){
+        this.value = val;
+        this.next = next;
+    }
+}// 节点类
 ```
 | **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
 | --- | --- | --- | --- | --- | --- |
-| 206 | [反转链表](https://leetcode.cn/problems/reverse-linked-list/) | Easy | 迭代 / 递归翻转 | **🟢** |  |
-| 21 | [合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/) | Easy | 虚拟头节点 + 双指针 |  |  |
+| **206** | [**反转链表**](https://leetcode.cn/problems/reverse-linked-list/) | **Easy** | **迭代 / 递归翻转** | **🟢** | **两种方法的实现都有卡顿和错误** |
+| **21** | [**合并两个有序链表**](https://leetcode.cn/problems/merge-two-sorted-lists/) | **Easy** | **虚拟头节点 + 双指针** | **🔴** | **思路错误导致实现都是乱的** |
 | 141 | [环形链表](https://leetcode.cn/problems/linked-list-cycle/) | Easy | 快慢指针判环 |  |  |
 | 142 | [环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/) | Medium | 快慢指针 + 入环点推导 |  |  |
 | 160 | [相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/) | Easy | 双指针拼接遍历 |  |  |
