@@ -30,7 +30,7 @@ public class reverseList {
             tail = tail.next;
         }
 
-        Node newHead = reverse(dummy.next);
+        Node newHead = reverse1(dummy.next);
 
         printList(newHead);
 
@@ -50,6 +50,25 @@ public class reverseList {
 
         return p;
         
+    }
+
+    public static Node reverse1(Node root){
+        // 使用迭代的方式进行链表反转而不是使用递归,主要是应对超大栈的情况，需要使用到遍历
+        Node prev = null;
+        Node curr = root;
+
+        while (curr != null) {
+            Node next = curr.next;
+            curr.next = prev;//反转
+            
+            // 移动
+            prev = curr;
+            curr = next;
+            // 编码错误3: curr = curr.next，因为这个已经反转过了因此curr.next已经不再是下一块了，这就是为什么需要进行保存
+
+        }
+        return prev;
+        // 编码错误4:这里反转之后的头结点是prev尾部节点是root了
     }
 
     public static void printList(Node head) {

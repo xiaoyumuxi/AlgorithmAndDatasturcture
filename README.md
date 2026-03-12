@@ -42,3 +42,35 @@
 | 76 | [**最小覆盖子串**](https://leetcode.cn/problems/minimum-window-substring/) | **Hard** | **滑窗 + 哈希计数** | **🔴** | **做不出来思路混乱了** |
 | 438 | [找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/) | Medium | 定长滑窗 + 哈希 | **🔴** | 和76比有细微的变化，实现还是有问题 |
 | 209 | [长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/) | Medium | 变长滑窗模板 | 🟢 | 细节上有点问题，新题 |
+
+### Day 6~7 链表
+
+```
+    public static class Node{// 这里需要static才能直接调用
+        int value;
+        Node next;
+
+        public Node(){}
+
+        public Node(int val){this.value = val;}
+
+        public Node(int val,Node next){
+            this.value = val;
+            this.next = next;
+        }
+    }// 节点类
+```
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 206 | [反转链表](https://leetcode.cn/problems/reverse-linked-list/) | Easy | 迭代 / 递归翻转 | **🟢** |  |
+| 21 | [合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/) | Easy | 虚拟头节点 + 双指针 |  |  |
+| 141 | [环形链表](https://leetcode.cn/problems/linked-list-cycle/) | Easy | 快慢指针判环 |  |  |
+| 142 | [环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/) | Medium | 快慢指针 + 入环点推导 |  |  |
+| 160 | [相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/) | Easy | 双指针拼接遍历 |  |  |
+| 19 | [删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/) | Medium | 快慢指针间距 N |  |  |
+| 24 | [两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs/) | Medium | 虚拟头 + 三指针操作 |  |  |
+| 25 | [K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | Hard | 分组翻转 + 递归/迭代 |  |  |
+| 148 | [排序链表](https://leetcode.cn/problems/sort-list/) | Medium | 归并排序 + 快慢找中点 |  |  |
+| 138 | [随机链表的复制](https://leetcode.cn/problems/copy-list-with-random-pointer/) | Medium | 哈希映射 / 节点交织 |  |  |
+| 23 | [合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/) | Hard | 最小堆 / 分治归并 |  |  |
+| 146 | [LRU 缓存](https://leetcode.cn/problems/lru-cache/) | Medium | 哈希表 + 双向链表 |  |  |
