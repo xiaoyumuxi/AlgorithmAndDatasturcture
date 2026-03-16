@@ -6,6 +6,7 @@ public class LRUCache {
     class Node {
         int key;
         int value;
+        long time;
         Node prev;
         Node next;
 
@@ -19,6 +20,7 @@ public class LRUCache {
 
     int capacity;
     HashMap<Integer,Node> map = new HashMap<>();
+    long TTL = 1000000;// ms
     Node head = new Node(); // dummy head
     Node tail = new Node(); // dummy tail
 
@@ -72,17 +74,26 @@ public class LRUCache {
         if (!map.containsKey(key)) return -1;
 
         Node node = map.get(key);
-        moveToHead(node);
-        return node.value;
+        if(System.currentTimeMillis() - node.time >= TTL){
+            removeNode(node);
+            map.remove(key);
+            return -1;
+        }
+        else{
+            moveToHead(node);
+            return node.value;
+        } 
     }
 
     public void put(int key, int value) {
         if (map.containsKey(key)) {
             Node node = map.get(key);
             node.value = value;
+            node.time = System.currentTimeMillis();
             moveToHead(node);
         } else {
             Node node = new Node(key, value);
+            node.time = System.currentTimeMillis();
             map.put(key, node);
             addToHead(node);
 
