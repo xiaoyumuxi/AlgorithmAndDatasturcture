@@ -69,8 +69,8 @@ public static class Node{// 这里需要static才能直接调用
 | **160** | [**相交链表**](https://leetcode.cn/problems/intersection-of-two-linked-lists/) | **Easy** | **双指针拼接遍历** | **🔴** | **思路遗忘了，相交主要是走相同长度** |
 | **19** | [**删除链表的倒数第 N 个结点**](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/) | **Medium** | **快慢指针间距 N** | **🟢** | **`p.next = q` 跳到尾巴而非跳过一个节点，缺少删头处理** |
 | **24** | [**两两交换链表中的节点**](https://leetcode.cn/problems/swap-nodes-in-pairs/) | **Medium** | **虚拟头 + 三指针操作** | **🔴** | **大量错误脑子不清醒了，交换的逻辑多画图** |
-| 25 | [K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | Hard | 分组翻转 + 递归/迭代 |  |  |
-| 148 | [排序链表](https://leetcode.cn/problems/sort-list/) | Medium | 归并排序 + 快慢找中点 |  |  |
-| 138 | [随机链表的复制](https://leetcode.cn/problems/copy-list-with-random-pointer/) | Medium | 哈希映射 / 节点交织 |  |  |
-| 23 | [合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/) | Hard | 最小堆 / 分治归并 |  |  |
-| 146 | [LRU 缓存](https://leetcode.cn/problems/lru-cache/)(+升级版本带时间戳的) | Medium | 哈希表 + 双向链表 |  |  |
+| **25** | [**K 个一组翻转链表**](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | **Hard** | **分组翻转 + 递归/迭代** | **🔴** | **206的分组版本，我还是没太懂一直卡** |
+| **148** | [**排序链表**](https://leetcode.cn/problems/sort-list/) | **Medium** | **归并排序 + 快慢找中点** | **🟢** | **可以使用数组的方式处理，归并法不记得** |
+| 138 | [随机链表的复制](https://leetcode.cn/problems/copy-list-with-random-pointer/) | Medium | 哈希映射 / 节点交织 | **🔴** | 没有思路，尤其是值相等的时候(但是点了一下就很简单了→哈希映射) |
+| **23** | [**合并 K 个升序链表**](https://leetcode.cn/problems/merge-k-sorted-lists/) | **Hard** | **最小堆 / 分治归并** | **🟢** | **只会206的升级，不会分治法和最小堆法** |
+| **146** | [**LRU 缓存](https://leetcode.cn/problems/lru-cache/)(+升级版本带时间戳)** | **Medium** | **哈希表 + 双向链表(自建)** | **🔴** | **卡住了的，尤其是有关双向链表部分** |
