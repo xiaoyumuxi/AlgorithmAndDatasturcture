@@ -69,6 +69,25 @@ public class mergeKLinkList {
         return dummy.next;
     }
 
+    public static Node merge1(Node[] lists, int left, int right){
+        // 使用分治思想进行处理
+        if(left == right)return lists[left];
+
+        int mid = left + (right - left) / 2;
+
+        Node l = merge1(lists, left, mid);
+        Node r = merge1(lists, mid, right);
+
+        return merge(l, r);
+    }
+
+    public Node mergeKLists1(Node[] lists) {
+        if (lists == null || lists.length == 0) return null;
+        return merge1(lists, 0, lists.length - 1);
+    }
+
+    // 还可以使用最小堆的方法处理，但是懒得学了哈
+
     public static void printList(Node head) {
         Node cur = head;
         while (cur != null) {
