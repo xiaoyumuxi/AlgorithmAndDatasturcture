@@ -74,3 +74,6 @@ public static class Node{// 这里需要static才能直接调用
 | 138 | [随机链表的复制](https://leetcode.cn/problems/copy-list-with-random-pointer/) | Medium | 哈希映射 / 节点交织 | **🔴** | 没有思路，尤其是值相等的时候(但是点了一下就很简单了→哈希映射) |
 | **23** | [**合并 K 个升序链表**](https://leetcode.cn/problems/merge-k-sorted-lists/) | **Hard** | **最小堆 / 分治归并** | **🟢** | **只会206的升级，不会分治法和最小堆法** |
 | **146** | [**LRU 缓存](https://leetcode.cn/problems/lru-cache/)(+升级版本带时间戳)** | **Medium** | **哈希表 + 双向链表(自建)** | **🔴** | **卡住了的，尤其是有关双向链表部分** |
+
+## Week 2 算法二刷 · 栈 & 哈希表 & 二分查找 & 贪心
+### Day 1 栈基础
