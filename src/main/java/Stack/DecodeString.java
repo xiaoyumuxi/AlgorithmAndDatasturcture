@@ -8,6 +8,7 @@ public class DecodeString {
     public static void main(String[] args) {
         String s = "3[a]2[bc]";
         System.out.println(decodeString(s));
+        System.out.println(decodeString1(s));
     }
 
     public static String decodeString(String s) {
@@ -44,9 +45,10 @@ public class DecodeString {
     }
 
     public static String decodeString1(String s){
+        // 可以使用递归去处理
         StringBuilder sb = new StringBuilder();
         int num = 0;
-        int i = 0;
+        // 编码错误1:递归解析字符串时，除了“返回这一层解析出的结果”，还必须知道：当前已经扫描到字符串的哪个位置了，因此必须是类共享的i
         while(i < s.length()){
             char ch = s.charAt(i);
 
