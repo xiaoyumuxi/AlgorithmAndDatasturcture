@@ -77,3 +77,10 @@ public static class Node{// 这里需要static才能直接调用
 
 ## Week 2 算法二刷 · 栈 & 哈希表 & 二分查找 & 贪心
 ### Day 1 栈基础
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 20 | [有效的括号](https://leetcode.cn/problems/valid-parentheses/) | Easy | 括号匹配，栈基础 | 🔴 | 写错了只peek不pop |
+| **155** | [**最小栈**](https://leetcode.cn/problems/min-stack/) | **Medium** | **辅助栈同步维护最小值** | **🔴** | **需要使用两个栈，因为一旦弹出了一个元素那么这个时候的最小值是会改变的** |
+| **394** | [**字符串解码**](https://leetcode.cn/problems/decode-string/) | **Medium** | **栈模拟递归嵌套** | **🔴** | **栈模拟递归的思路不够清晰** |
+
+### Day 2
