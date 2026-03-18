@@ -7,6 +7,7 @@ public class MostfulElement {
     public static void main(String[] args) {
         int[] nums = {2,2,1,1,1,2,2};
         System.out.println(majorityElement(nums));
+        System.out.println(MostfulElements(nums));
     }
 
     public static int majorityElement(int[] nums) {
@@ -21,5 +22,21 @@ public class MostfulElement {
             // 思路错误1:题目要求的是返回多数元素是那个元素而不是频率
         }
         return res;
+    }
+
+    public static int MostfulElements(int[] nums){
+        // 但是上面的方法没有达到O(1)的空间复杂度，因此这里用的是摩尔投票法->Boyer-Moore Voting Algorithm
+        int candidate = nums[0];
+        int count = 0;// 这个结构是模仿哈希表的，是必须要的
+
+        for(int num : nums){
+            if(count == 0){
+                candidate = num; // 这个时候就擂主死了就换人
+            }
+            if(num == candidate)count++;
+            else count--;
+        }
+
+        return candidate;
     }
 }
