@@ -83,4 +83,10 @@ public static class Node{// 这里需要static才能直接调用
 | **155** | [**最小栈**](https://leetcode.cn/problems/min-stack/) | **Medium** | **辅助栈同步维护最小值** | **🔴** | **需要使用两个栈，因为一旦弹出了一个元素那么这个时候的最小值是会改变的** |
 | **394** | [**字符串解码**](https://leetcode.cn/problems/decode-string/) | **Medium** | **栈模拟递归嵌套** | **🔴** | **栈模拟递归的思路不够清晰，递归需要维护一个全局的变量i** |
 
-### Day 2
+### Day 2 栈进阶 · 单调栈
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| **739** | [**每日温度**](https://leetcode.cn/problems/daily-temperatures/) | **Medium** | **单调栈经典模板** | **🔴** | 思路不清晰，需要把“为什么维护递减栈”和“result 怎么算”想透 |
+| **84** | [**柱状图中最大的矩形**](https://leetcode.cn/problems/largest-rectangle-in-histogram/) | **Hard** | **单调栈进阶应用** | **🔴** | 一刷遗漏，重点理解“为什么弹栈时算面积”和“宽度怎么来的” |
+
+### Day 3 哈希表基础
