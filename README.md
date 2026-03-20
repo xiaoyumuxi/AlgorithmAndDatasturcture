@@ -90,3 +90,15 @@ public static class Node{// 这里需要static才能直接调用
 | **84** | [**柱状图中最大的矩形**](https://leetcode.cn/problems/largest-rectangle-in-histogram/) | **Hard** | **单调栈进阶应用** | **🔴** | 一刷遗漏，重点理解“为什么弹栈时算面积”和“宽度怎么来的” |
 
 ### Day 3 哈希表基础
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| **49** | [**字母异位词分组**](https://leetcode.cn/problems/group-anagrams/) | **Medium** | **排序 / 计数作 key 分组** | **🔴** | **哈希表的Key没想到是需要唯一因此排序，而是局限在了key是单个的字母** |
+| 169 | [多数元素](https://leetcode.cn/problems/majority-element/) | Easy | Boyer-Moore 投票法 | **🟢** | 哈希算法会，但是投票法没想出来 |
+| 136 | [只出现一次的数字](https://leetcode.cn/problems/single-number/) | Easy | 异或位运算 | **🔴** | 想到了抵消但是不知道常数空间位运算抵消 |
+
+### Day 4 哈希表进阶
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| **560** | [**和为 K 的子数组**](https://leetcode.cn/problems/subarray-sum-equals-k/) | **Medium** | **前缀和 + 哈希表** | **🔴** | **不是滑动窗口而是哈希表** |
+| **347** | [**前 K 个高频元素**](https://leetcode.cn/problems/top-k-frequent-elements/) | **Medium** | **哈希计数 + 堆 / 桶排序** | **🟢** | **建堆的代码不够熟练** |
+| 41 | [缺失的第一个正数](https://leetcode.cn/problems/first-missing-positive/) | Hard | 原地哈希（数组当哈希表） | **🔴** | 完全不会，while循环难度有点大 |
