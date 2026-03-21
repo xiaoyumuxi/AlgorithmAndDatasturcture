@@ -42,4 +42,20 @@ public class searchTwoDemMartix {
         return false;
 
     }
+
+    public static boolean search(int[][] nums,int target){
+        int n = nums[0].length,m = nums.length;
+        int i = 0, j = m * n - 1;
+        while (i <= j) {
+            int mid = i + (j - i) / 2;
+            if(nums[mid/n][mid%n] > target){
+                j = mid - 1;
+            }else if(nums[mid/n][mid%n] < target){
+                i = mid + 1;
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
 }
