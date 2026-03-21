@@ -1,4 +1,4 @@
-package Binary;
+package BinarySearch;
 
 public class searchTwoDemMartix {
     public static void main(String[] args) {
