@@ -9,17 +9,12 @@ public class JumpGame1 {
     }
 
     public static boolean canReach(int[] nums){
-        int[] maxReach = new int[nums.length];
-        boolean[] canReach = new boolean[nums.length];
-        canReach[0] = true;
+        int maxReach = 0;
         for (int i = 0; i < nums.length; i++) {
-            if(canReach[i] == true)maxReach[i] = i + nums[i];
-            else continue;
-            // 编码错误1:不能到达的部分还是没有跳过后面的逻辑
-            if(maxReach[i] < nums.length)canReach[maxReach[i]] = true;
-            if(maxReach[i] > nums.length)return true;
-            // 思路错误1:关键是最开始我们不可以确认这个i是不是可达的呀
+            if(i > maxReach)return false;
+            maxReach = Math.max(maxReach, i + nums[i]);
+            if(maxReach >= nums.length - 1)return true;
         }
-        return false;
+        return true;
     }
 }
