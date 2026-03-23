@@ -123,3 +123,20 @@ public static class Node{// 这里需要static才能直接调用
 
 ## Week 3 算法二刷 · 二叉树 & 回溯 & 图论
 ### Day 1 二叉树基础遍历
+```
+public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        
+        public TreeNode(int val){
+            this.val = val;
+        }
+
+        public TreeNode(int val,TreeNode left,TreeNode right){
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+```
