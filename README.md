@@ -102,3 +102,21 @@ public static class Node{// 这里需要static才能直接调用
 | **560** | [**和为 K 的子数组**](https://leetcode.cn/problems/subarray-sum-equals-k/) | **Medium** | **前缀和 + 哈希表** | **🔴** | **不是滑动窗口而是哈希表** |
 | **347** | [**前 K 个高频元素**](https://leetcode.cn/problems/top-k-frequent-elements/) | **Medium** | **哈希计数 + 堆 / 桶排序** | **🟢** | **建堆的代码不够熟练** |
 | 41 | [缺失的第一个正数](https://leetcode.cn/problems/first-missing-positive/) | Hard | 原地哈希（数组当哈希表） | **🔴** | 完全不会，while循环难度有点大 |
+
+### Day 5 二分查找
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 35 | [搜索插入位置](https://leetcode.cn/problems/search-insert-position/) | Easy | 二分模板入门，左边界 | **🔴** | **混用循环递归、left=mid死循环、值与下标混淆** |
+| 33 | [搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/) | Medium | 二分变体，判断有序半区 | 🟢 | 忽略了原本就全局有序的情况 |
+| **34** | [**在排序数组中查找元素的第一个和最后一个位置**](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/) | **Medium** | **两次二分找左右边界** | **🔴** | **找到target后还需要移动指针来搜索最左和最右元素** |
+| 74 | [搜索二维矩阵](https://leetcode.cn/problems/search-a-2d-matrix/) | Medium | 二维转一维二分 | **🔴** | **没有二维转一维的思路，while (left <= right) 结束后left和right表示的含义不够熟悉** |
+| 153 | [寻找旋转排序数组中的最小值](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/) | Medium | 二分找拐点，与右端比较 | **🔴** | **二分是关键是淘汰一半而不是有序，right=mid 配合 left<right** |
+
+### Day 6 贪心
+
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| **55** | [**跳跃游戏**](https://leetcode.cn/problems/jump-game/) | **Medium** | **贪心维护最远可达位置** | **🔴** | **忽视了i本身不可达就直接i+nums[i]了，而且使用了数组存储** |
+| 45 | [跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/) | Medium | 贪心分层BFS，最少跳跃次数 | 🔴 | 分层的思想反应太慢 |
+| 763 | [划分字母区间](https://leetcode.cn/problems/partition-labels/) | Medium | 贪心 + 最远出现位置 | 🔴 | 使用区间合并发方式但是**超级大量小错误** |
+| **406** | [**根据身高重建队列**](https://leetcode.cn/problems/queue-reconstruction-by-height/) | **Medium** | **排序 + 贪心插入** | **🔴** | **还是需要引导，记得大概但是不能独立实现** |
