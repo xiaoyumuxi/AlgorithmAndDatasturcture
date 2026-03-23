@@ -120,3 +120,6 @@ public static class Node{// 这里需要static才能直接调用
 | 45 | [跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/) | Medium | 贪心分层BFS，最少跳跃次数 | 🔴 | 分层的思想反应太慢 |
 | 763 | [划分字母区间](https://leetcode.cn/problems/partition-labels/) | Medium | 贪心 + 最远出现位置 | 🔴 | 使用区间合并发方式但是**超级大量小错误** |
 | **406** | [**根据身高重建队列**](https://leetcode.cn/problems/queue-reconstruction-by-height/) | **Medium** | **排序 + 贪心插入** | **🔴** | **还是需要引导，记得大概但是不能独立实现** |
+
+## Week 3 算法二刷 · 二叉树 & 回溯 & 图论
+### Day 1 二叉树基础遍历
