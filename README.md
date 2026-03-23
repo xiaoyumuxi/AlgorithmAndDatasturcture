@@ -140,3 +140,10 @@ public static class TreeNode {
         }
     }
 ```
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 94 | [二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/) | Easy | 递归 / 迭代遍历模板 | 🔴 | 递归法比较熟悉但是迭代法还是不够熟练 |
+| **104** | [**二叉树的最大深度**](https://leetcode.cn/problems/maximum-depth-of-binary-tree/) | **Easy** | **DFS / BFS** | **🔴** | **递归法还能写出来，迭代法层序变量不熟** |
+| 226 | [翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/) | Easy | 递归交换左右子树 | 🔴 | 代码习惯不好，没有保存原始引用 |
+| 101 | [对称二叉树](https://leetcode.cn/problems/symmetric-tree/) | Easy | 递归镜像对比 | 🔴 | 看了一下提示(怎么分解子问题能力不够)，而且编码递归没有处理边界 |
+| 543 | [二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/) | Easy | DFS + 全局变量记录最大值 | 🟢 | 层数和边数有点混淆了 |
