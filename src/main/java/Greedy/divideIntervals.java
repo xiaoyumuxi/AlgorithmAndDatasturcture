@@ -8,6 +8,7 @@ public class divideIntervals {
     public static void main(String[] args) {
         String s = "ababcbacadefegdehijhklij";
         System.out.println(divide(s));
+        System.out.println(divide1(s));
     }
 
     public static List<Integer> divide(String s){
@@ -52,6 +53,27 @@ public class divideIntervals {
 
         }
         list.add(curr - prev + 1);// 编码错误4:最后一个没有加入到list中去
+
+        return list;
+    }
+
+    public static List<Integer> divide1(String s){
+        int[] last = new int[26];
+        for(int i = 0 ; i < s.length() ; i++){
+            last[s.charAt(i) - 'a'] = i;
+        }
+        // 仅仅记录最后出现的位置
+
+        List<Integer> list = new ArrayList<>();
+        int start = 0  , end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            end = Math.max(end, last[s.charAt(i)-'a']);
+            if(i == end){
+                // 这个时候表示需要切换到下一层去了，和LC45里面的边界很类似
+                list.add(end - start + 1);
+                start = end + 1;// 换层
+            }
+        }
 
         return list;
     }
