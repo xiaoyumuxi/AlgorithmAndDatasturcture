@@ -147,3 +147,11 @@ public static class TreeNode {
 | 226 | [翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/) | Easy | 递归交换左右子树 | 🔴 | 代码习惯不好，没有保存原始引用 |
 | 101 | [对称二叉树](https://leetcode.cn/problems/symmetric-tree/) | Easy | 递归镜像对比 | 🔴 | 看了一下提示(怎么分解子问题能力不够)，而且编码递归没有处理边界 |
 | 543 | [二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/) | Easy | DFS + 全局变量记录最大值 | 🟢 | 层数和边数有点混淆了 |
+
+### Day 2 二叉树 BFS & BST
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 102 | [二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/) | Medium | BFS 队列模板 | 🟢 | queue.offer(root);忘记了 |
+| **98** | [**验证二叉搜索树**](https://leetcode.cn/problems/validate-binary-search-tree/) | **Medium** | **中序遍历有序性 / 递归上下界** | 🟡 | **没有判空的好习惯!!!而且算法需要优化不是最优的** |
+| **230** | [**二叉搜索树中第 K 小的元素**](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/) | **Medium** | **中序遍历第 K 个** | 🟡 | **递归返回值必须接住！** |
+| 199 | [二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/) | Medium | BFS 取每层最后 / DFS 优先右子树 | 🟢 | DFS的方法没有想到 |
