@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class reverseList {
     class Node{
         int val;
@@ -13,7 +15,23 @@ public class reverseList {
         }
     }
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        for (int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            tail.next = new Node(x);
+            tail = tail.next;
+        }
+
+        Node newHead = reverse1(dummy.next);
+
+        printList(newHead);
+
+        sc.close();
     }
 
     public static Node reverse(Node head){
@@ -28,17 +46,24 @@ public class reverseList {
 
     // 迭代法还是有大问题呀!!!
     public static Node reverse1(Node head){
+        Node prev = null;
         Node curr = head;
-        Node next = head.next;
-        if(curr == null || next == null)return null;
         while (curr != null) {
-            Node p = curr.next;
-            next = p.next;
-            p.next = curr;
-            curr.next = null;
-            curr = p;
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
-        return curr;
+        return prev;
     }
     
+    public static void printList(Node head) {
+        Node cur = head;
+        while (cur != null) {
+            System.out.print(cur.value);
+            if (cur.next != null) System.out.print(" ");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
 }
