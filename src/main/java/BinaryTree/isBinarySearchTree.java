@@ -28,6 +28,10 @@ public class isBinarySearchTree {
 
     public static boolean isSearchTree(TreeNode root){
         // 保证左子树最右边的需要小于root.val然后还需要保证右子树最左边的大于root.val
+        if (root == null) return true;
+        if (root.left == null && root.right == null) return true;
+        // 编码问题1: 树的递归是必须要进行判空操作的，否则会出现问题的
+        
         TreeNode p = root.left;
         while(p.right != null){
             p = p.right;
