@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class reverseList {
-    class Node{
+    static class Node{
         int val;
         Node next;
 
@@ -60,7 +60,7 @@ public class reverseList {
     public static void printList(Node head) {
         Node cur = head;
         while (cur != null) {
-            System.out.print(cur.value);
+            System.out.print(cur.val);
             if (cur.next != null) System.out.print(" ");
             cur = cur.next;
         }
