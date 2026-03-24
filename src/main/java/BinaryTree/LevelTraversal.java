@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-public class LevelTranvasle {
+public class LevelTraversal {
     public static class TreeNode {
         int val;
         TreeNode left;
@@ -33,6 +33,8 @@ public class LevelTranvasle {
 
     public static List<List<Integer>> bfs(TreeNode root){
         List<List<Integer>> res = new ArrayList<>();
+        if (root == null) return res;
+        // 边界条件错误，queue.offer(null) 会让 ArrayDeque 直接抛 NullPointerException
         Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
