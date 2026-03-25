@@ -1,7 +1,5 @@
 package BinaryTree;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -61,6 +59,7 @@ public class publicAncestor {
         return root;
     }
 
+    // 思路错误1:尝试去倒着找两个节点的公共祖先然后发现找不出来，实际上来说，二叉树这个模式就注定了使用递归居多
     public static TreeNode findAncestor(TreeNode root,TreeNode p,TreeNode q){
         // 表示在root下面找p和q，找不到就返回null
         if (root == null || root == p || root == q) return root;    
