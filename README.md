@@ -155,3 +155,12 @@ public static class TreeNode {
 | **98** | [**验证二叉搜索树**](https://leetcode.cn/problems/validate-binary-search-tree/) | **Medium** | **中序遍历有序性 / 递归上下界** | 🟡 | **没有判空的好习惯!!!而且算法需要优化不是最优的** |
 | **230** | [**二叉搜索树中第 K 小的元素**](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/) | **Medium** | **中序遍历第 K 个** | 🟡 | **递归返回值必须接住！** |
 | 199 | [二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/) | Medium | BFS 取每层最后 / DFS 优先右子树 | 🟢 | DFS的方法没有想到 |
+
+### Day 3 二叉树构造与路径
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 114 | [二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/) | Medium | 前序遍历 + 原地操作 | 🟢 | NPE的坑继续踩 |
+| 105 | [从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | Medium | 递归分治 + 哈希加速 | 🟡 | 方法不是最优解复杂度极高 |
+| 236 | [二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/) | Medium | 递归后序遍历 | 🔴 | 没有想到使用递归方法处理 |
+| 437 | [路径总和 III](https://leetcode.cn/problems/path-sum-iii/) | Medium | 前缀和 + DFS | 🟡 | 思路对了，漏了初始化和类型问题 |
+| 124 | [二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/) | Hard | DFS + 全局最大值更新 | 🔴 | 思路理解了，核心混淆点在返回值语义 |
