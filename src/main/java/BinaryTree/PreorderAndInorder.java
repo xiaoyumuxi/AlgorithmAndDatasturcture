@@ -54,7 +54,8 @@ public class PreorderAndInorder {
 
     public static TreeNode transfer(int[] preorder,int[] inorder){
         if(preorder.length == 0)return null;
-        // 编码错误1:根据preorder找到root，然后根据root划分inorder数组
+        // 编码错误1:没有对rootNum的合法性进行校验，PTE边界问题
+        // 根据preorder找到root，然后根据root划分inorder数组
         int rootNum = preorder[0];
         int i = -1;
         for (int j = 0; j < inorder.length; j++) {
