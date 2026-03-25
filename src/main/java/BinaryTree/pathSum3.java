@@ -20,7 +20,18 @@ public class pathSum3 {
     }
 
     public static void main(String[] args) {
+        TreeNode root = new TreeNode(10);
+        root.left = new TreeNode(5);
+        root.left.left = new TreeNode(3);
+        root.left.right = new TreeNode(2);
+        root.left.left.left = new TreeNode(3);
+        root.left.left.right = new TreeNode(-2);
+        root.left.right.right = new TreeNode(1);
+        root.right = new TreeNode(-3);
+        root.right.right = new TreeNode(11);
         
+        map.put(0, 1);
+        System.out.println(dfs(root, 8, 0));
     }
 
     // 根据这种图的形式一般一眼就是类似于前缀和，为了避免重复的加
