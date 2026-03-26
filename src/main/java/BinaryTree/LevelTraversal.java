@@ -28,6 +28,7 @@ public class LevelTraversal {
         root.right = new TreeNode(20);
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
+        System.out.println(dfs(root));
         System.out.println(bfs(root));
     }   
 
@@ -48,6 +49,25 @@ public class LevelTraversal {
             }
             res.add(list);
         }
+
+        return res;
+    }
+
+    static List<List<Integer>> res = new ArrayList<>();
+    static int depth = 0;
+
+    public static List<List<Integer>> dfs(TreeNode root){
+        if(root == null)return null;
+        if(depth == res.size()){
+            res.add(new ArrayList<>()); // 这个时候创建新层
+        }
+
+        res.get(depth).add(root.val);
+        depth++;
+
+        dfs(root.left);
+        dfs(root.right);
+        depth--; // 所有的dfs都是需要这个步骤的，利用的思路是深度优先遍历但是通过get方法来找到指定的层数来进行add
 
         return res;
     }
