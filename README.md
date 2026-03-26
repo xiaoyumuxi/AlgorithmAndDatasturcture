@@ -164,3 +164,11 @@ public static class TreeNode {
 | 236 | [二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/) | Medium | 递归后序遍历 | 🔴 | 没有想到使用递归方法处理 |
 | 437 | [路径总和 III](https://leetcode.cn/problems/path-sum-iii/) | Medium | 前缀和 + DFS | 🟡 | 思路对了，漏了初始化和类型问题 |
 | 124 | [二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/) | Hard | DFS + 全局最大值更新 | 🔴 | 思路理解了，核心混淆点在返回值语义 |
+
+### Day 4 回溯基础
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 46 | [全排列](https://leetcode.cn/problems/permutations/) | Medium | 回溯模板，used 数组 | 🔴 | 太久没写了，细节上处处是错 |
+| 78 | [子集](https://leetcode.cn/problems/subsets/) | Medium | 回溯，选或不选 | 🔴 | 组合靠start，压根不会 |
+| 17 | [电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/) | Medium | 回溯 + 映射表 | 🔴 | 没有想清楚控制for循环的是谁 |
+| 39 | [组合总和](https://leetcode.cn/problems/combination-sum/) | Medium | 回溯 + 排序剪枝 | 🔴 | 缺 start 导致重复组合，缺剪枝导致栈溢出 |
