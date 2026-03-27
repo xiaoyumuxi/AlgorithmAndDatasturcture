@@ -1,55 +1,53 @@
 package BackTrace;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class NQueen {
     public static void main(String[] args) {
         int n = 4;
         char[][] nums = new char[n][n];
-        System.out.println();
+        for (char[] row : nums) Arrays.fill(row, '.');
+        dfs(nums, 0, n);
+        System.out.println(res);
     }
 
     public static List<List<String>> res = new ArrayList<>();
     public static List<String> path = new ArrayList<>();
 
+    static Set<Integer> cols = new HashSet<>();
+    static Set<Integer> d1 = new HashSet<>(); // 副对角线i+j相同
+    static Set<Integer> d2 = new HashSet<>(); // 主对角线i-j相同
 
-    public static void dfs(char[][] nums,int row,int n){
-        if(row == n + 1){
+    public static void dfs(char[][] board, int row, int n) {
+        if (row == n) {
             res.add(new ArrayList<>(path));
             return;
         }
 
-        for(int i = 0 ; i < nums[0].length ; i++){
-            // 将Q放到这个位置然后将棋盘不可以访问的地方标记成#
-            dfs(nums, row + 1, n);
+        for (int col = 0; col < n; col++) {
+            if (cols.contains(col) || d1.contains(row - col) || d2.contains(row + col))
+                continue;
+
+            // 选择：放 Q + 标记
+            board[row][col] = 'Q';
+            cols.add(col);
+            d1.add(row - col);
+            d2.add(row + col);
+            path.add(new String(board[row]));
+
+            dfs(board, row + 1, n);
+
+            // 撤销：全部恢复
+            path.remove(path.size() - 1);
+            board[row][col] = '.';
+            cols.remove(col);
+            d1.remove(row - col);
+            d2.remove(row + col);
         }
     }
 
-    public static boolean isVaild(char[][] nums,int i,int j,boolean[][] canPut){
-
-        if(canPut[i][j]!=false){
-            nums[i][j] = 'Q';
-            for(int x = 0 ; x < nums[0].length ; x++){
-                if(x == j)continue;
-                nums[i][x] = '.';
-            }
-            // 放了之后还需要将canPut更新一下
-            for(int x = 0 ; x < nums[0].length ; x++){
-                canPut[i][x] = false;
-            }// 横着
-            for (int k = 0; k < canPut.length; k++) {
-                canPut[k][j] = false;
-            }// 竖着
-            for(int x = 0 ; (i + x) < nums.length 
-                && (j + x) < nums[0].length && (i - x) >= 0 && (j - x) >= 0 ;x++){
-                    canPut[i+x][j+x] = false;
-                    canPut[i-x][j-x] = false;
-                    canPut[i+x][j-x] = false;
-                    canPut[i-x][j+x] = false;
-            }// 这里应该是六个循环，混在一起反而错了，而且没有办法回溯
-            return true;
-        }
-        else return false;
-    }
 }
