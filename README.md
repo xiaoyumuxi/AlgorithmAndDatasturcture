@@ -172,3 +172,11 @@ public static class TreeNode {
 | 78 | [子集](https://leetcode.cn/problems/subsets/) | Medium | 回溯，选或不选 | 🔴 | 组合靠start，压根不会 |
 | 17 | [电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/) | Medium | 回溯 + 映射表 | 🔴 | 没有想清楚控制for循环的是谁 |
 | 39 | [组合总和](https://leetcode.cn/problems/combination-sum/) | Medium | 回溯 + 排序剪枝 | 🔴 | 缺 start 导致重复组合，缺剪枝导致栈溢出 |
+
+### Day 5 回溯进阶
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 22 | [括号生成](https://leetcode.cn/problems/generate-parentheses/) | Medium | 回溯，合法性剪枝 | 🔴 | 漏了剪枝条件导致无限递归 |
+| **79** | [**单词搜索**](https://leetcode.cn/problems/word-search/) | **Medium** | **DFS + 回溯标记 visited** | **🔴** | **没有标记访问死循环，数组下标问题** |
+| 131 | [分割回文串](https://leetcode.cn/problems/palindrome-partitioning/) | Medium | 回溯 + 回文判断 | 🔴 | 切分的时候思路迷糊了 |
+| **51** | [**N 皇后**](https://leetcode.cn/problems/n-queens/) | **Hard** | **回溯经典，对角线判断** | **🔴** | **对角线卡住就不想写了(判断方法不会)，心理因素，而且确实有难点** |
