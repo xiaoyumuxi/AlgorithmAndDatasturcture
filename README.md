@@ -180,3 +180,12 @@ public static class TreeNode {
 | **79** | [**单词搜索**](https://leetcode.cn/problems/word-search/) | **Medium** | **DFS + 回溯标记 visited** | **🔴** | **没有标记访问死循环，数组下标问题** |
 | 131 | [分割回文串](https://leetcode.cn/problems/palindrome-partitioning/) | Medium | 回溯 + 回文判断 | 🔴 | 切分的时候思路迷糊了 |
 | **51** | [**N 皇后**](https://leetcode.cn/problems/n-queens/) | **Hard** | **回溯经典，对角线判断** | **🔴** | **对角线卡住就不想写了(判断方法不会)，心理因素，而且确实有难点** |
+
+## Week 4 算法二刷 · 动态规划
+### Day 1 线性 DP
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| 70 | [爬楼梯](https://leetcode.cn/problems/climbing-stairs/) | Easy | DP 入门，斐波那契变体 | 🟢 | 第一反应是DFS而不是DP |
+| 118 | [杨辉三角](https://leetcode.cn/problems/pascals-triangle/) | Easy | 二维 DP 基础模拟 | 🔴 | 不用完全的统一所有的逻辑，有的时候写死一部分可能更简单 |
+| **198** | [**打家劫舍**](https://leetcode.cn/problems/house-robber/) | **Medium** | **线性 DP，不相邻选取** | **🟡** | **边界条件和初始值处理还是不够细心** |
+| **152** | [**乘积最大子数组**](https://leetcode.cn/problems/maximum-product-subarray/) | **Medium** | **同时维护最大值和最小值** | **🔴** | **优先想到贪心和滑动窗口，没有想到DP** |
