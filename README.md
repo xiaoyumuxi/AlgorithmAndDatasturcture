@@ -189,3 +189,11 @@ public static class TreeNode {
 | 118 | [杨辉三角](https://leetcode.cn/problems/pascals-triangle/) | Easy | 二维 DP 基础模拟 | 🔴 | 不用完全的统一所有的逻辑，有的时候写死一部分可能更简单 |
 | **198** | [**打家劫舍**](https://leetcode.cn/problems/house-robber/) | **Medium** | **线性 DP，不相邻选取** | **🟡** | **边界条件和初始值处理还是不够细心** |
 | **152** | [**乘积最大子数组**](https://leetcode.cn/problems/maximum-product-subarray/) | **Medium** | **同时维护最大值和最小值** | **🔴** | **优先想到贪心和滑动窗口，没有想到DP** |
+
+### Day 2 背包 DP
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| **416** | [**分割等和子集**](https://leetcode.cn/problems/partition-equal-subset-sum/) | **Medium** | **0-1 背包** | **🔴** | **选不选元素能不能凑出值→标准0-1问题** |
+| **279** | [**完全平方数**](https://leetcode.cn/problems/perfect-squares/) | **Medium** | **完全背包变体** | **🔴** | **忘记完全背包问题，模板不熟悉** |
+| 322 | [零钱兑换](https://leetcode.cn/problems/coin-change/) | Medium | 完全背包模板 | 🟡 | 初始化和最值的细节错误 |
+| 139 | [单词拆分](https://leetcode.cn/problems/word-break/) | Medium | DP + 哈希集合判断 | 🟡 | 完全背包丢旧值，一直都是这个问题 |
