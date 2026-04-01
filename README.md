@@ -197,3 +197,10 @@ public static class TreeNode {
 | **279** | [**完全平方数**](https://leetcode.cn/problems/perfect-squares/) | **Medium** | **完全背包变体** | **🔴** | **忘记完全背包问题，模板不熟悉** |
 | 322 | [零钱兑换](https://leetcode.cn/problems/coin-change/) | Medium | 完全背包模板 | 🟡 | 初始化和最值的细节错误 |
 | 139 | [单词拆分](https://leetcode.cn/problems/word-break/) | Medium | DP + 哈希集合判断 | 🟡 | 完全背包丢旧值，一直都是这个问题 |
+
+### Day 3 子序列 DP
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| **300** | [**最长递增子序列**](https://leetcode.cn/problems/longest-increasing-subsequence/) | **Medium** | **DP O(n²) / 贪心+二分 O(n log n)** | **🔴** | **使用单调栈处理但是思路错误了** |
+| 1143 | [最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/) | Medium | 二维 DP 经典 | 🔴 | 不会写DP方程 |
+| **72** | [**编辑距离**](https://leetcode.cn/problems/edit-distance/) | **Medium** | **二维 DP，三种操作取最小** | **🟡** | **细节问题，主要是初始化的时候没有动脑子** |
