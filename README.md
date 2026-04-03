@@ -204,3 +204,12 @@ public static class TreeNode {
 | **300** | [**最长递增子序列**](https://leetcode.cn/problems/longest-increasing-subsequence/) | **Medium** | **DP O(n²) / 贪心+二分 O(n log n)** | **🔴** | **使用单调栈处理但是思路错误了** |
 | 1143 | [最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/) | Medium | 二维 DP 经典 | 🔴 | 不会写DP方程 |
 | **72** | [**编辑距离**](https://leetcode.cn/problems/edit-distance/) | **Medium** | **二维 DP，三种操作取最小** | **🟡** | **细节问题，主要是初始化的时候没有动脑子** |
+
+### Day 4 字符串 & 路径 DP
+| **题号** | **题目** | **难度** | **核心考点** | **状态** | **笔记** |
+| --- | --- | --- | --- | --- | --- |
+| **32** | [**最长有效括号**](https://leetcode.cn/problems/longest-valid-parentheses/) | **Hard** | **DP / 栈 / 双向扫描** | **🔴** | **最开始的二维DP都没有想清楚，一维的没有想出来** |
+| 10 | [正则表达式匹配](https://leetcode.cn/problems/regular-expression-matching/) | Hard | 二维 DP，* 匹配 0 次或多次 | **🔴** | a*到底匹配几个a这个是需要考虑 |
+| 62 | [不同路径](https://leetcode.cn/problems/unique-paths/) | Medium | 二维 DP / 组合数学 | 🟡 | 初始化操作和dp数组内容 |
+| 64 | [最小路径和](https://leetcode.cn/problems/minimum-path-sum/) | Medium | 二维 DP 路径累加 | 🔴 | 初始化的时候没懂为什么需要初始化一整行和一整列(所有信息都直接或者间接依赖这部分，因此需要初始化) |
+| 221 | [最大正方形](https://leetcode.cn/problems/maximal-square/) | Medium | 矩阵 DP，min(左/上/左上)+1 | 🔴 | 在初始化部分有迷糊的点，而且DP想出来有卡顿不自然 |
