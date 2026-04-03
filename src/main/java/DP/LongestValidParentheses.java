@@ -2,7 +2,7 @@ package DP;
 
 public class LongestValidParentheses {
     public static void main(String[] args) {
-        System.out.println(maxParent("(()"));
+        System.out.println(maxParent1(")()())"));
     }
 
     public static int maxParent(String s){
@@ -25,4 +25,31 @@ public class LongestValidParentheses {
         }
         return max;
     }
+
+    public static int maxParent1(String s){
+        int n = s.length();
+        int[] dp = new int[n];
+        int max = 0;
+        //dp[i]表示从0...i的最长有效括号的长度
+        if(n < 2)return 0;
+        for(int i = 1;i < n;i++){
+            if(s.charAt(i)=='(')continue;
+            if(s.charAt(i)==')'){
+                if(s.charAt(i-1)=='('){
+                    // 因为这个i-1,因此循环从i=1开始的
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
+                }else{
+                    int j = i-dp[i-1]-1;
+                    if(j >= 0 && s.charAt(i-dp[i-1]-1) == '('){
+                        dp[i] = dp[i-1] + 2;
+                        // 这里加上dp[j-1]有值存在的问题，因此需要三元处理一下
+                        dp[i] += (j >= 1 ? dp[j - 1] : 0);
+                    }
+                }
+                max = Math.max(max, dp[i]);
+            }
+        }
+        return max;
+    }
+
 }
